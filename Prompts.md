@@ -29,3 +29,4 @@ Rules:
 20. Create notes in a copy-paste friendly format.
 
 plus if you want to explain way better split in part in one window you cant explain well
+with interview questions to expect from this logic where answer like to be senior employee
