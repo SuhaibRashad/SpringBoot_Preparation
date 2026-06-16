@@ -27,3 +27,5 @@ Rules:
 18. Never skip hidden assumptions.
 19. End with a complete mental model of the topic.
 20. Create notes in a copy-paste friendly format.
+
+plus if you want to explain way better split in part in one window you cant explain well
