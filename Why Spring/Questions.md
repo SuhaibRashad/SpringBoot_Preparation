@@ -1,32 +1,79 @@
-1. Core Architecture & Problem-Solving
-Why does the Spring Framework exist? What problems does it solve?
+## 1. Traditional Spring vs. Spring Boot
 
-Expected focus: Moving away from monolithic configurations, manual object instantiation, and hard-coded dependencies toward loose coupling.
+* **What specific problems does Spring Boot solve that existed in traditional Spring framework applications?**
+* *Expected focus:* Mentioning the reduction of **tedious** (tiresome/monotonous) XML configurations, eliminating manual dependency version mismatches, and removing the need to manually set up an external Tomcat server.
 
-What is the difference between Tight Coupling and Loose Coupling? Can you give a code example?
 
-Expected focus: In tight coupling, a class instantiates its dependencies internally using the new keyword (e.g., private Engine engine = new Engine();), making it refractory (stubborn/unmanageable) to change or swap implementations. Loose coupling relies on interfaces and having those dependencies provided from the outside.
+* **Is Spring Boot a replacement for the Spring Framework?**
+* *Expected focus:* Absolutely not. Spring Boot is an extension of Spring. It is essentially: $\text{Spring Boot} = \text{Spring} + \text{Automation} + \text{Sensible Defaults}$. It uses Spring under the hood but wraps it in auto-configuration.
 
-2. Inversion of Control (IoC) & Dependency Injection (DI)
-What is Inversion of Control (IoC), and how does Spring implement it?
 
-Expected focus: Flipping the control of the application flow and object creation from the developer's manual code to the underlying framework.
 
-Is Inversion of Control the same as Dependency Injection?
+## 2. Core Spring Boot Mechanics
 
-Expected focus: Clarifying that IoC is the broader design principle, while Dependency Injection (DI) is the specific design pattern Spring uses to achieve IoC.
+* **What does it mean when we say Spring Boot is an "Opinionated" framework?**
+* *Expected focus:* It means Spring Boot makes default decisions ("opinions") for you. It assumes that if you add a web dependency, you probably want an embedded Tomcat server running on port 8080 with standard configurations, saving you from writing boilerplate code.
 
-How does Dependency Injection improve code testability?
 
-Expected focus: Because dependencies are passed into a class rather than hardcoded inside it, you can easily pass mock objects (like a mock repository or mock database connection) during unit testing.
+* **Explain the concept of "Convention over Configuration".**
+* *Expected focus:* The framework assumes a standard setup layout and configuration by default. You only need to write configuration code when you want to deviate from that standard convention.
 
-3. The Spring Container & Beans
-What is a Spring Bean?
 
-Expected focus: A Java object that is instantiated, assembled, and otherwise managed by the Spring IoC container. It is not just a plain Java object (POJO) created by you via new.
+* **What are Starter Dependencies in Spring Boot, and how do they help with version management?**
+* *Expected focus:* Starters (like `spring-boot-starter-web`) are aggregators of common dependencies. Instead of manually matching versions for Spring MVC, Jackson, and Tomcat, you import one starter, and Spring Boot's parent BOM (Bill of Materials) manages compatible versions automatically.
 
-What are the primary responsibilities of the Spring Container?
 
-Expected focus: Highlighting the core life cycle: reading configuration metadata, instantiating/creating the beans, wiring (injecting) dependencies together, storing them in context, and managing their destruction.
 
+## 3. Web Architecture & Deployment
+
+* **What is an embedded server, and how does it change how you deploy Java applications?**
+* *Expected focus:* In traditional Spring, you had to build a **WAR** (Web Application Archive) file and manually install and configure an external Tomcat instance. Spring Boot embeds Tomcat directly inside the executable **JAR** file, allowing you to run the app instantly by just executing the `main` method.
+
+
+* **Can you briefly explain the relationship between a Servlet, Tomcat, and Spring MVC?**
+* *Expected focus:* A Servlet is the fundamental Java class that handles HTTP web requests. Tomcat is the web server/servlet container that hosts and runs these servlets. Spring MVC is the high-level framework built on top of servlets to make web development organized and efficient.
+
+
+
+---
+
+# Part 2
+
+## 1. Traditional Spring vs. Spring Boot
+
+* **What specific problems does Spring Boot solve that existed in traditional Spring framework applications?**
+* *Expected focus:* Mentioning the reduction of **tedious** (tiresome/monotonous) XML configurations, eliminating manual dependency version mismatches, and removing the need to manually set up an external Tomcat server.
+
+
+* **Is Spring Boot a replacement for the Spring Framework?**
+* *Expected focus:* Absolutely not. Spring Boot is an extension of Spring. It is essentially: $\text{Spring Boot} = \text{Spring} + \text{Automation} + \text{Sensible Defaults}$. It uses Spring under the hood but wraps it in auto-configuration.
+
+
+
+## 2. Core Spring Boot Mechanics
+
+* **What does it mean when we say Spring Boot is an "Opinionated" framework?**
+* *Expected focus:* It means Spring Boot makes default decisions ("opinions") for you. It assumes that if you add a web dependency, you probably want an embedded Tomcat server running on port 8080 with standard configurations, saving you from writing boilerplate code.
+
+
+* **Explain the concept of "Convention over Configuration".**
+* *Expected focus:* The framework assumes a standard setup layout and configuration by default. You only need to write configuration code when you want to deviate from that standard convention.
+
+
+* **What are Starter Dependencies in Spring Boot, and how do they help with version management?**
+* *Expected focus:* Starters (like `spring-boot-starter-web`) are aggregators of common dependencies. Instead of manually matching versions for Spring MVC, Jackson, and Tomcat, you import one starter, and Spring Boot's parent BOM (Bill of Materials) manages compatible versions automatically.
+
+
+
+## 3. Web Architecture & Deployment
+
+* **What is an embedded server, and how does it change how you deploy Java applications?**
+* *Expected focus:* In traditional Spring, you had to build a **WAR** (Web Application Archive) file and manually install and configure an external Tomcat instance. Spring Boot embeds Tomcat directly inside the executable **JAR** file, allowing you to run the app instantly by just executing the `main` method.
+
+
+* **Can you briefly explain the relationship between a Servlet, Tomcat, and Spring MVC?**
+* *Expected focus:* A Servlet is the fundamental Java class that handles HTTP web requests. Tomcat is the web server/servlet container that hosts and runs these servlets. Spring MVC is the high-level framework built on top of servlets to make web development organized and efficient.
+
+
+# Part 3
 
